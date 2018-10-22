@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <title th:text="#{portalName}"></title>
+    </head>
+    <body>
+        <div th:fragment="footer">
+            <a id="scrolBtn" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+            <div id = "footermenu" class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container">
+                    <div class="row">
+<!--                        <div class="col-sm-2">
+                            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"/>
+                            <p>Partner</p>
+                        </div>-->
+                        <div class="col-sm10 pull-right">
+                            <a id="aboutLink" th:href="@{/about}" th:text="#{aboutme}"/>
+                            <a style="text-decoration: none" th:text="${copyrightmessage}"></a>
+
+                            <span sec:authorize="isAuthenticated()">
+                                User: <b><span sec:authentication="name"></span> </b>|
+                                <a id="logoutLink" th:href="@{/logout}"><span class="glyphicon glyphicon-log-out"></span>Sign Out</a>
+                            </span>
+                        </div>
+
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

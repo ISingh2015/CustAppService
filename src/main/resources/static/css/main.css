@@ -1,0 +1,101 @@
+/*do not remove used in nav bar*/
+body {
+    /*background: url(http://cdn.desktopwallpapers4.me/wallpapers/world/1366x768/1/4916-blurred-city-street-1366x768-world-wallpaper.jpg) no-repeat center center fixed;*/    
+    background-color:white;
+    padding-top:75px;
+    padding-bottom:8%;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color:lightblue;
+    /*text-shadow: 1px 2px 5px goldenrod;*/
+}
+
+fieldset
+{ 
+    background-color:whitesmoke !important;
+
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+    text-shadow: 1px 2px 5px goldenrod;
+}
+.shrink {
+    min-height: 15px;
+}
+.shrinkanimate {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+
+}
+.sign-with {
+    margin-top: 25px;
+    padding: 20px;
+}
+div#OR {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #C2C2C2;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -16px;
+    top: 40%;
+    z-index: 1;
+    background: #DFDFDF;
+}
+#scrolBtn {
+    cursor: pointer;
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+    display:none;    
+}
+
+#scrolBtn:hover {
+    background-color: #555;
+
+}
+.btn-primary:hover {
+    color:white;
+    background:goldenrod;
+}
+
+/*modal dialog*/ 
+.modal-header-warning {
+    color:#fff;
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #f0ad4e;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+svg {
+    width: 50%;
+
+    display: block;
+    text-transform: uppercase; font: 500 8.5em/1  'Open Sans', Impact; 
+}
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    min-height: 200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 800px) {
+    .carousel-caption {
+        display: none; 
+
+
+    }
+}

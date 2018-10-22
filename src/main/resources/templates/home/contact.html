@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{portalName}"></title>        
+    </head>
+    <body>
+        <div th:replace="fragments/header :: header-css-script"/>
+        <div th:replace="fragments/header :: header-css-script-contact"/>       
+
+        <div th:replace="fragments/header :: header"/>
+        <div class="contact" id="contact">
+            <div class="container">
+                <div id="dispMessage" class="alert alert-info" style="display:none"></div>                
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Send me your Message<i class="fa fa-paper-plane-o"></i></h2>
+                    </div>
+                </div>
+                <div id="map-canvas"></div>
+                <div id = "contactform" class="row">
+                    <div id="dispMessage" class="alert alert-info" style="display:none"></div>                    
+                    <div class="form-group col-md-6">
+                        <input type="text" th:field="*{contactForm.newUser.userName}" id="contactformUsername" class="form-control input-lg"
+                               maxlength="30" th:attr="placeholder=#{contactFormName}" autocomplete="off"/>
+                        <input type="email" th:field="${contactForm.newUser.emailId}" id="contactformUseremail" class="form-control input-lg"
+                               maxlength="30" th:attr="placeholder=#{contactFormEmail}" autocomplete="off"/>
+                        <input type="text" th:field="*{contactForm.newUser.mobileNo}" id="contactformUsermobileno" class="form-control input-lg"
+                               maxlength="10" th:attr="placeholder=#{contactFormMobile}" autocomplete="off"/>
+                        <input class="form-control" name="human" type="text" id="human" size="30" th:attr="placeholder=#{contactFormRobot}"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <fieldset>
+                            <textarea id="contactformUsermessage" class="form-control" name="comments" cols="40" rows="20" th:attr="placeholder=#{contactFormMessage}"></textarea>
+                        </fieldset>
+                    </div>
+                    <div class="from-group col-md-12">
+                        <fieldset>
+                            <button type="submit" class="btn btn-lg" id="contactFormSubmitBtn" value="Submit" th:text="#{contactFormSendMessageBtnText}"/>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer"/>
+    </body>
+</html>

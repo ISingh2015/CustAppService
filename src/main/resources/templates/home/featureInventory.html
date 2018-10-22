@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <title th:text="#{portalName}"></title>
+    </head>
+    <body>
+        <div th:replace="fragments/header :: header-css-script"/>
+        <div th:replace="fragments/header :: header-css-script-comments"/>               
+        <div th:replace="fragments/header :: header"/>
+
+        <div class="container">
+            <h2>Features</h2>
+            <table class="table table-condensed">
+                <tr th:each="imageAndDescr, cnt :${imageAndDescr}">
+                    <td th:id="img + ${cnt.index}">
+                        <a th:href="@{'/featureInventory'+${cnt.index}}" data-toggle="tooltip" data-placement="right" title="Click Image for full screen View">
+                            <img th:src="${imageAndDescr.name}" alt="InvImage" style="width:100%;height:auto;display:block;justify-content: center;" />
+                        </a>                        
+                    </td>
+                    <td class="text-justify" th:utext="${imageAndDescr.descr}"/>
+                </tr>
+            </table>
+            <div sec:authorize="isAuthenticated()" class="panel panel-default">
+                <div class="panel-heading">Your Comments Here</div>
+                <div class="panel-body">
+                    <div id="feature-comments"></div>
+                </div>                
+
+            </div>            
+
+        </div>
+
+<!--            <a id="scrolBtn" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>-->
+        <!-- /.container -->
+
+        <div th:replace="fragments/footer :: footer"/>
+
+    </body>
+</html>

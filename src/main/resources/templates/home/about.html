@@ -1,0 +1,60 @@
+<!DOCTYPE HTML >
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{portalName}"></title>        
+    </head>
+    <body>
+        <div th:replace="fragments/header :: header-css-script"/>
+        <div th:replace="fragments/header :: header-css-script-comments"/>       
+
+        <div th:replace="fragments/header :: header"/>
+
+        <div class="container-fluid">
+
+            <div class="jumbotron">
+
+                <img style="width:10%;height:10%" src="images/me.jpg" class="img-rounded" alt="Me"/><h1>My Blog</h1>
+                <p class="text-justify">
+                    My Name is Inderjit and I have developed this Desktop Inventory, Accounting Software system. I have good software development experience
+                    using technologies from Microsoft and Sun Microsystems and over 17 years of IT exposure using different operating systems. 
+                    My experience scales the commercial sector and have developed software applications for reporting inventory, accounting and Payroll data. 
+                    At present I am working as a Free Lance Developer, developing multiuser Real Time Software systems for the automation industry. 
+
+                    After graduating, I completed a electronic data processing certification programming with COBOL on Mini Frame computer systems, 
+                    Also being interested in the automation, worked here and there gathering knowledge on Personal computers 
+                    Integrated circuit boards and processors used by desktop computers today, also lectured on COBOL, BASIC and FORTRAN software languages, 
+                    and was looking at a career in software industry as a software developer, finally started up with Clipper Software development, that was where I started my career commercially building my first Inventory control software application.
+                </p>
+                <p class="text-justify">
+                    That being done, further started on new open source technologies and career prospects, did private certification with INGRES RDBMS, took up a job in the Construction Industry, developing billing systems for timely collection from Clients.
+                </p>
+                <p class="text-justify">
+                    Later Added SCO UNIX, JAVA certification to find better opportunity in the U.A.E, where I Spent 10 years developing Multi user Desktop and Web applications, Unix and Mac systems. 
+                    Created a Data Center, including CISCO Data and voice network using VPN and ADSL/ISDN.
+                </p>
+                <p class="text-justify">
+                    Today, I have in depth knowledge of networking using JAVA on window servers, setting up and configuring the servers and making them 
+                    available to end users, consumers / employees. 
+                    Also worked with Microsoft Azure O/s SAAS, creating Spring Boot secured web application using MVC, ORM.
+                </p>
+
+                <p class="text-justify">
+                    This was a little about me. To look at the product Info please browse through the other individual pages as in the <mark>Menu</mark> on the top.Thank you for your valuable time visiting Elegant Software Web Site. <kbd>CTRL-Z</kbd>
+                </p>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Leave a Comment Here</div>
+                <div class="panel-body pre-scrollable">
+                    <div id="feature-comments"></div>
+                </div>                
+
+            </div>            
+
+        </div>
+
+        <!-- /.container -->
+
+        <div th:replace="fragments/footer :: footer"/>
+
+    </body>
+</html>

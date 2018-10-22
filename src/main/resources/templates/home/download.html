@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/header :: header-css-script">
+        <title th:text="#{portalName}"></title>
+    </head>
+    <body>
+
+        <div th:replace="fragments/header :: header"/>
+
+        <div class="container">
+
+            <div class="starter-template">
+
+                <h4 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h4>
+                <div th:switch="${allowDownload}"> 
+                    <div th:case="true">
+                        <p class="text-info" th:text="#{downloadp1}"/>
+                        <p class="text-info" th:text="#{downloadp2}"/>
+                        <form id="downloadform" th:action="@{startdownload}">
+                            <button onclick="downloadBtnClick();" type="submit" class="btn btn-sm btn-primary glyphicon glyphicon-download" th:text="#{downloadbtntext}"/>
+                        </form>
+
+                    </div>
+                    <div th:case="false">
+                        <p class="text-info" th:text="#{downloadnotallowed}"/>                        
+                    </div>
+                </div>                
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+        <div th:replace="fragments/footer :: footer"/>
+
+    </body>
+</html>

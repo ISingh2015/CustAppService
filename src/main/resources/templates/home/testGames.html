@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{portalName}"></title>
+    </head>
+    <body>
+        <div th:replace="fragments/header :: header-css-script"/>
+        <div th:replace="fragments/header :: header"/>
+
+        <div>Loading Games ...Please wait ...
+            <object  classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+                width="300" height="400">
+                <param name="code" value="com.inderjit.vo.TestJApplet.class"/>
+                Applet Failed to Run. No Java Plug-in found
+            </object>
+        </div>
+    </body>
+</html>

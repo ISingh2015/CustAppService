@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{portalName}"></title>
+    </head>
+    <body ng-app="invMain">
+        <div th:replace="fragments/header :: header-js-script-angular"/>
+        <div th:replace="fragments/header :: header-css-script"/>
+        <div th:replace="fragments/header :: header"/>
+        <div class="container">
+
+            <div class="row">
+                <h1>Desktop Inventory Management System</h1>
+                <div class="col-sm-8">
+                    <div id="invCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#invCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#invCarousel1" data-slide-to="1"></li>
+                            <li data-target="#invCarousel2" data-slide-to="2"></li>
+                            <li data-target="#invCarousel3" data-slide-to="3"></li>                            
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="https://placehold.it/400x200?text=Login Remotely" alt="Image"/>
+                                <div class="carousel-caption">
+                                    <h2>Login</h2>
+                                    <p>Online Account</p>
+                                </div>      
+                            </div>
+
+                            <div class="item">
+                                <img src="https://placehold.it/400x200?text=Manage Customers, Suppliers" alt="Image"/>
+                                <div class="carousel-caption">
+                                    <h2>Remotely update Order, Bills.</h2>
+                                </div>      
+                            </div>
+
+                            <div class="item">
+                                <img src="https://placehold.it/400x200?text=Send Douments " alt="Image"/>
+                                <div class="carousel-caption">
+                                    <h3>Email Orders or Invoices immediately</h3>
+                                </div>      
+                            </div>
+
+                            <div class="item">
+                                <img src="https://placehold.it/400x200?text=Manage Bills, Reports" alt="Image"/>
+                                <div class="carousel-caption">
+                                    <h3>Remotely See Customer dues etc..</h3>
+                                </div>      
+                            </div>
+
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#invCarousel" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#invCarousel" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>    
+                <div class="col-sm-4">
+                    <div class="well">
+                        <p><mark><a th:href='@{/featureInventory}'>Know more about online Inventory </a></mark></p>
+                    </div>
+                    <div class="well">
+                        <p>Upcoming Events..</p>
+                    </div>
+                    <div class="well">
+                        <p><mark><a th:href='@{/about}'>Vist our Blog</a></mark></p>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="starter-template" ng-controller="invMainController">
+                <p class="text-justify">This Site enables you to download the Setup, a ready for use <kbd>PRODUCT Inventory Management Software</kbd>, this setup is for window based Desktop or Laptop.
+                    <mark>To download, <a th:href='@{/login}'>Login to the Web Site</a></mark>.To View the Product features click the <mark>Features</mark> drop down link on the top and select <mark><a th:href='@{/featureInventory}'>Inventory Control</a>.</mark> 
+                    This will display the product features, for example Login screens, Data Entry screens, Reports filter criteria screens, and other filter screens. hover the mouse on the image and click to enlarge that image. 
+                    If you feel satisfied about a product feature, read ahead reading. Leave me a comment at the end of the section enabling me enhancing the product.
+                </p>
+                <p class="text-justify">Double clicking the desktop Icon after completing the setup, will display the login window enabling you to login to the Inventory System.  Enter the credentials you created to Login and start using the downloaded software. 
+                </p>
+
+                <p class="text-justify">
+                    The pricing page displays the available license per user. This product license is (non transferable free) for individuals or individual firms upto 60 day for evaluation purpose only.
+                </p>
+                <p class="text-justify">
+                    Have a query? Contact me by clicking the <mark><a th:href='@{/contact}'>Contact me</a></mark> Link on the top. Thank you for the time spent visiting this web site.
+                </p>
+                <audio id="beep-one" style="display:none;" controls="controls" preload="auto">
+                    <source src="https://a.clyp.it/q2oaawbe.mp3"></source>
+                    <source src="audio/beep.ogg"></source>
+                    Your browser isn't invited for super fun time.
+                </audio>
+                <!--<a id="rimshot-hover-sound" href="#">About</a>-->
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer"/>
+
+        <!-- Message Modal -->
+        <div id="messageModal" class="modal fade btn-default" role="dialog">
+            <div class="modal-dialog modal-sm">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header modal-header-warning">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1><i class="glyphicon glyphicon-thumbs-up"></i>Warn</h1>
+                    </div>
+                    <div class="modal-body">
+                        <p>Server is Down...Please wait...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>    
+    </body>    
+</html>

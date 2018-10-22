@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="#{portalName}"></title>
+    </head>
+    <body >
+        <div th:replace="fragments/header :: header-css-script"/>
+        <div th:replace="fragments/header :: header"/>        
+        <div th:replace="fragments/header :: header-css-script-hralign"/>        
+        <div class="container">
+            <div class="row">
+                <h1>HrAlign Setup</h1>
+                <div id="dispMessage" class="alert alert-info" style="display:none"></div>            
+                <div class="col-md-12">
+                    <div class="tab" role="tabpanel">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a id="defaultOpen" href="#smtpparent" aria-controls="home" role="tab" data-toggle="tab">SMTP Parent</a></li>
+                            <li role="presentation"><a href="#smtpgroup" aria-controls="profile" role="tab" data-toggle="tab">SMTP Group</a></li>
+                            <li role="presentation"><a href="#database" aria-controls="messages" role="tab" data-toggle="tab">Database</a></li>
+                            <li role="presentation"><a href="#dateConfig" aria-controls="messages" role="tab" data-toggle="tab">Date Config</a></li>
+                            <li role="presentation"><a href="#emailConfig" aria-controls="messages" role="tab" data-toggle="tab">Email Config</a></li>
+                            <li role="presentation"><a href="#intranet" aria-controls="messages" role="tab" data-toggle="tab">Intranet</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content tabs">
+                            <div role="tabpanel" class="tab-pane fade in active" id="smtpparent">
+                                <div id = "smtparentpanel" class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <div align="center" class="panel-title"><h2>SMTP Configuration (Parent Company)</h2></div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Host Name Parent</h6>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="text" class="form-control" id="hostnameparent"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Port</h6>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <input type="text" class="form-control" id="portparent"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Email ID</h6>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="text" class="form-control" id="emailidparent"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Password</h6>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="password" class="form-control" id="passwordparent"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Report Path</h6>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="text" class="form-control" id="reportpathparent"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">SSL</h6>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="sslparent" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="form-inline">
+                                        <input id = "emailtestparent" type="button" class="btn btn-sm btn-primary" value="Test Email"/>
+                                        <input id = "emailtextparent" type="text" class="text-info"  placeholder="Test Email Address (e.g:abc@neterson.com)" style="width:40%"/>
+                                        <input id = "emailsendparent" type="button" class="btn btn-sm btn-primary" value="Send Email"/>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <input id = "smtpgroupsave" type="button" class="btn btn-sm btn-primary pull-right" value="Save"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="smtpgroup">
+                                <div id = "smtgrouppanel" class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <div align="center" class="panel-title"><h2>SMTP Configuration (Group Company)</h2></div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Host Name Group</h6>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="text" class="form-control" id="hostnamegrpup"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Port</h6>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <input type="text" class="form-control" id="portgroup"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Email ID</h6>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="text" class="form-control" id="emailidgroup"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Password</h6>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="password" class="form-control" id="passwordgroup"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">Report Path</h6>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <input type="text" class="form-control" id="reportpathgroup"/>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <h6 class="text-info">SSL</h6>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="sslparent" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                    </div>        
+                                    <div class="form-inline">
+                                        <input id = "emailtestgroup" type="button" class="btn btn-sm btn-primary" value="Test Email"/>
+                                        <input id = "emailtextgroup" type="text" class="text-info"  placeholder="Test Email Address (e.g:xyz@netersongroup.com)" style="width:40%"/>
+                                        <input id = "emailsendgroup" type="button" class="btn btn-sm btn-primary" value="Send Email"/>
+                                    </div>
+
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <input id = "smtpgroupsave" type="button" class="btn btn-sm btn-primary pull-right" value="Save"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="database">
+                                <h4>Database / Connection</h4>
+                                <div class="row">
+                                    <label class="col-md-12 switch">
+                                        <input id="databaseSelector" type="checkbox" />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div id = "oraclepanel" class="panel panel-success">
+                                            <div class="panel-heading">
+                                                <div align="center" class="panel-title"><h2>Oracle</h2></div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">JDBC Url</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="jdbcurloracle"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">User</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="jdbcuseroracle"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">Password</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="jdbcuserpwdoracle"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">Initial Pool Size</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="initpoolsizeoracle"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">Min Pool Size</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="minpoolsizeoracle"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">Max Pool Size</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="maxpoolsizeoracle"/>
+                                                    </div>
+                                                </div>    
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div id = "sqlpanel" class="panel panel-success">
+                                            <div class="panel-heading">
+                                                <div align="center" class="panel-title"><h2>SQL Server</h2></div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">JDBC Url</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="jdbcurl"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">User</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="jdbcuser"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">Password</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="jdbcuserpwd"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">Initial Pool Size</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="initpoolsize"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">Min Pool Size</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="minpoolsize"/>
+                                                    </div>
+                                                </div>    
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h6 class="text-info">Max Pool Size</h6>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input type="text" class="form-control" id="maxpoolsize"/>
+                                                    </div>
+                                                </div>    
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <input id = "databasesave" type="button" class="btn btn-sm btn-primary pull-right" value="Save"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="dateConfig" >
+                                <div id = "datepanel" class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <div align="center" class="panel-title"><h2>Date Config</h2></div>
+                                    </div>
+                                    <div class="panel-body">
+                                    </div>        
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <input id = "datesave" type="button" class="btn btn-sm btn-primary pull-right" value="Save"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="emailConfig" >                            
+                                <div id = "emailpanel" class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <div align="center" class="panel-title"><h2>Emails Config</h2></div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4 class="text-info">Attendance Regulation Emails</h4>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="emailattendance" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4 class="text-info">Leave Notification Emails</h4>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="emailleavenotification" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4 class="text-info">Attendance (on Duty / Shift change) Emails</h4>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="emailshiftchange" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4 class="text-info">BirthDay / Anniversay Emails</h4>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="emailanniversary" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4 class="text-info">PMS Emails</h4>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="emailpms" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4 class="text-info">Travel and Claim Management Emails</h4>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="emailtravel" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <h4 class="text-info">Recruitment Emails</h4>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label class="switch" style="margin:1%">
+                                                    <input id="emailrecruit" type="checkbox" />
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>    
+
+                                    </div>        
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <input id = "emailsave" type="button" class="btn btn-sm btn-primary pull-right" value="Save"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="intranet" >                            
+                                <div id = "intranetpanel" class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <div align="center" class="panel-title"><h2>Intranet Content (Know Us Notice Board, Downloads and Links) </h2></div>
+                                    </div>
+                                    <div class="panel-body">
+                                    </div>        
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <input id = "intranetsave" type="button" class="btn btn-sm btn-primary pull-right" value="Save"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="button" class="btn btn-sm btn-primary" value="Restart Required" style="margin:1%"/>
+            </div>
+        </div>
+    </body>
+</html>

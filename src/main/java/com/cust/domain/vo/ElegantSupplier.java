@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
-import org.hibernate.envers.Audited;
+//import org.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "Supplier")

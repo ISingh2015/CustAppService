@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import org.hibernate.envers.Audited;
+//import org.hibernate.envers.Audited;
 
 /**
  *

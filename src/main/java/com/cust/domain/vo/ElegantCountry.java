@@ -7,10 +7,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.hibernate.envers.Audited;
 //import orgs.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "Country")
+@Audited
 public class ElegantCountry implements Serializable, Comparable<ElegantCountry> {
 
     private static long serialVersionUID = 4173435938575881525L;

@@ -6,10 +6,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.hibernate.envers.Audited;
 //import org.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "Customer")
+@Audited
 public class ElegantCustomer implements Serializable, Comparable<ElegantCustomer> {
 
     private static final long serialVersionUID = 4173435938575881525L;

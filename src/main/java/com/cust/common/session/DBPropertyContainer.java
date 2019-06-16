@@ -8,6 +8,7 @@ public class DBPropertyContainer {
     private String dbUserName;
     private String dbPassword;
     private String dbServerName;
+    private String dbServerPort;
     private String dbDriverClassName;
     private String buyProperty;
     private String sellProperty;
@@ -34,6 +35,14 @@ public class DBPropertyContainer {
 
     public void setDbServerName(String dbServerName) {
         this.dbServerName = dbServerName;
+    }
+
+    public String getDbServerPort() {
+        return dbServerPort;
+    }
+
+    public void setDbServerPort(String dbServerPort) {
+        this.dbServerPort = dbServerPort;
     }
 
     /**

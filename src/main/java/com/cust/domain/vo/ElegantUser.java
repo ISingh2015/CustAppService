@@ -113,7 +113,7 @@ public class ElegantUser implements Serializable, Comparable<ElegantUser> {
     private Integer division = 0;
 
     @Column(name = "role")
-    private Integer role = 0;
+    private String role = "";
     
     @Transient
     private ArrayList<ElegantUserAccess> elegantUserAccessList;
@@ -451,14 +451,14 @@ public class ElegantUser implements Serializable, Comparable<ElegantUser> {
     /**
      * @return the role
      */
-    public Integer getRole() {
+    public String getRole() {
         return role;
     }
 
     /**
      * @param role the role to set
      */
-    public void setRole(Integer role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
